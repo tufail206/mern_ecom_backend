@@ -6,7 +6,7 @@ const userRoutes= require("./routes/user-routes")
 const ErrorMiddleware  = require("./middlewares/Error-middleware");
 const ConnectDb = require("./configs/dbConnection");
 const cors_credentials = {
-  origin: process.env.CLIENT_URL,
+  origin:"https://mern-ecom-chi.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "DELETE", "PUT", "HEAD", "OPTIONS"],
 };
