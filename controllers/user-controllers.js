@@ -57,7 +57,7 @@ const verify_email =async(req,res,next)=>{ {
     const user = await User.findOne({ verifyToken:token });
 
     if (!user) {
-      return res.status(400).json({
+      return res.status(404).json({
         success: false,
         message: "Invalid or expired token" });
     }
