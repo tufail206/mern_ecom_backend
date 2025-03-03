@@ -3,7 +3,18 @@ const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 const jwt=require("jsonwebtoken")
 const sendVerificationEmail = require("../configs/SendEmail");
-
+const user=async(req,req,next)=>{
+  try {
+    res.status(200).json({
+      success: true,
+      message: "User fetched successfully",
+     
+    })
+  } catch (error) {
+      next(error);
+  
+  }
+}
 const register = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
@@ -122,4 +133,4 @@ const login=async(req, res, next) => {
 
 
 
-module.exports = { register,verify_email,login };
+module.exports = { register, verify_email, login, user };
