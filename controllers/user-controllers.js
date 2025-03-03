@@ -3,7 +3,7 @@ const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 const jwt=require("jsonwebtoken")
 const sendVerificationEmail = require("../configs/SendEmail");
-const user=async(req,req,next)=>{
+const user=async(req,res,next)=>{
   try {
     res.status(200).json({
       success: true,
